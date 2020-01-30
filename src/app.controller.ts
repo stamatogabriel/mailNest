@@ -60,13 +60,13 @@ export class AppController {
 
       const response = await this.MailService.sendMail(email)
       
-      /*console.log(filesResponse)
+      console.log(response)
       
       filesResponse.map(file => {
         fs.unlinkSync(path.resolve(__dirname, '..', 'tmp', file.filename))
-      })*/
+      })
 
-      return { response };
+      return response ;
     } catch (error) {
       console.log(error);
     }

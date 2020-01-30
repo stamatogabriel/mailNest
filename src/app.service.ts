@@ -10,7 +10,7 @@ export class AppService {
 
   sendMail = async (mail: Interface): Promise<any> => {
 
-    this.mailerService
+    const response = await this.mailerService
       .sendMail({
         to: 'contato@advancedcorretora.com.br',
         from: 'contato@advancedcorretora.com.br',
@@ -23,7 +23,7 @@ export class AppService {
           message: mail.message,
         },
       })
-      .then((response) => response)
+      .then(() => response)
       .catch((error) => console.log(error))
   }
 
